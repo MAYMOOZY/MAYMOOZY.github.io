@@ -7,104 +7,68 @@
         <title>My blog</title>
         <!-- index.css -->
         <style>@import url(css/index.css);</style>
-        <style>
-            * {
-                margin: 0;
-                padding: 0;
-            }
-
-            #container {
-                position: relative;
-                overflow:auto;
-                overflow-wrap: normal;
-            }
-
-            .box {
-                float: left;
-                /* 给每个存放照片box设置为浮动元素，让所有的图片浮动到网页的第一行*/
-                padding: 5px;
-            }
-
-            .box-img {
-                width: 300px;
-                padding: 5px;
-                border: 1px solid #ccc;
-                box-shadow: 0 0 5px #ccc;
-                border-radius: 5px;
-            }
-
-            .box-img img {
-                width: 100%;
-                height: auto;
-            }
-        </style>
         <!-- index.js -->
+        <script src="script/resourceInfo.js"></script>
         <script src="script/index.js"></script>
     </head>
 
 
-
     <body>
-        <div id="container">
-            <div class="box">
-                <div class="box-img">
+        <div id="container" >
+            <!-- navigator -->
+            <div id="navi">
+                <div class="block">研三毕业，卖自用的各种物件儿</div>
+                <div class="block">联系方式: QQ 1586817306</div>
+            </div>
+
+            <div id="contentArea" >
+
+                <!-- <div class="imgCon" onclick="checkImgOn(this)">
                     <img src="./resource/image/IMG_0275.JPG" alt="">
                     <span>./resource/image/IMG_0275.JPG</span>
+                    <span>50元</span>
                 </div>
-            </div>
-            <div class="box">
-                <div class="box-img">
+
+                <div class="imgCon">
                     <img src="./resource/image/IMG_0275.JPG" alt="">
                 </div>
-            </div>
-            <div class="box">
-                <div class="box-img">
+
+                <div class="imgCon">
                     <img src="./resource/image/IMG_0278.JPG" alt="">
                 </div>
-            </div>
-            <div class="box">
-                <div class="box-img">
+
+                <div class="imgCon">
                     <img src="./resource/image/小物件书床头蓝.jpg" alt="">
                 </div>
-            </div>
-            <div class="box">
-                <div class="box-img">
+
+                <div class="imgCon">
                     <img src="./resource/image/IMG_0275.JPG" alt="">
                 </div>
-            </div>
-            <div class="box">
-                <div class="box-img">
+
+                <div class="imgCon">
                     <img src="./resource/image/小米和华为背面.jpg" alt="">
                 </div>
-            </div>
-            <div class="box">
-                <div class="box-img">
+
+                <div class="imgCon">
                     <img src="./resource/image/IMG_0277.JPG" alt="">
                 </div>
-            </div>
-            <div class="box">
-                <div class="box-img">
+
+                <div class="imgCon">
                     <img src="./resource/image/索尼耳机里面.jpg" alt="">
                 </div>
-            </div>
-            <div class="box">
-                <div class="box-img">
-                    <img src="./resource/image/IMG_0275.JPG" alt="">
-                </div>
-            </div>
-            <div class="box">
-                <div class="box-img">
-                    <img src="./resource/image/IMG_0275.JPG" alt="">
-                </div>
-            </div>
-            <div class="box">
-                <div class="box-img">
-                    <img src="./resource/image/IMG_0275.JPG" alt="">
-                </div>
-            </div>
 
+                <div class="imgCon">
+                    <img src="./resource/image/IMG_0275.JPG" alt="">
+                </div>
 
+                <div class="imgCon">
+                    <img src="./resource/image/IMG_0275.JPG" alt="">
+                </div>
+
+                <div class="imgCon">
+                    <img src="./resource/image/IMG_0275.JPG" alt="">
+                </div> -->
+            </div>
         </div>
-        <script src="./script/index.js"></script>
     </body>
 </html>

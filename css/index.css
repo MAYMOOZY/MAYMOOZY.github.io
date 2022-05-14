@@ -1,78 +1,91 @@
-body {
+#container {
     margin: 0;
-    height: 100vh;
+    padding: 0;
+    border: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+
     background-color: #eee;
+
+    display: flex;
+    flex-direction: column;
+    overflow: scroll;
+
+    
 }
 
-.block {
+#navi {
+    margin: 0;
+    padding: 0;
+    border: 1px solid black;
+    flex: 1;
+    height: auto;
+
+    color: red;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+#navi div {
+    flex: 1;
+    height: 100%;
     background-color: white;
     margin: 4px;
     box-shadow:
-        rgb(0 0 0 /20%) 0px 2px 1px -1px,
+        rgb(0 0 0 / 20%) 0px 2px 1px -1px,
         rgb(0 0 0 / 14%) 0px 1px 1px 0px,
         rgb(0 0 0 / 12%) 0px 1px 3px 0px;
+
+    text-align: center;
+    vertical-align: middle;
+    line-height: 100%;
 }
 
-.flex {
-    display: flex;
-}
 
-.flex1 {
-    flex: 1;
-}
 
-.flex2 {
-    flex: 2;
-}
 
-.flex4 {
-    flex: 4;
-}
-
-.flex8 {
+#contentArea {
     flex: 8;
+    margin: 0;
+    padding: 0;
+    height: 60%;
+    z-index: 1;
+
 }
 
-.flex16 {
-    flex: 16;
-}
 
-.flexCol {
-    flex-direction: column;
-}
-
-.flexRow {
-    flex-direction: row;
-}
-
-.flexCen {
-    justify-content: center;
-}
-
-.imgContainer {
+#contentArea .imgCon {
     float: left;
+    padding: 5px;
+    width: 25%;
+    border: 1px solid #000;
+    box-shadow: 0 0 5px #ccc;
+    border-radius: 5px;
+    z-index: 1;
+
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
+    justify-content: center;
 }
 
-.img {
-    max-width: 50%;
+#contentArea .imgCon:hover {
+    color: blue;
+    z-index: 300;
 }
 
-img:hover {
-    min-width: 75%;
-}
-
-
-@media(max-width: 600px) {
-    #leftmenu {
-        display: none;
-    }
-
-    #content {
-        flex-direction: column;
-    }
+#contentArea .imgCon img {
+    width: 100%;
+    z-index: 1;
 }
 
 
+
+
+@media(max-width: 600px) {}
