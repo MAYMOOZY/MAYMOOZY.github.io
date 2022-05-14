@@ -1,0 +1,78 @@
+body {
+    margin: 0;
+    height: 100vh;
+    background-color: #eee;
+}
+
+.block {
+    background-color: white;
+    margin: 4px;
+    box-shadow:
+        rgb(0 0 0 /20%) 0px 2px 1px -1px,
+        rgb(0 0 0 / 14%) 0px 1px 1px 0px,
+        rgb(0 0 0 / 12%) 0px 1px 3px 0px;
+}
+
+.flex {
+    display: flex;
+}
+
+.flex1 {
+    flex: 1;
+}
+
+.flex2 {
+    flex: 2;
+}
+
+.flex4 {
+    flex: 4;
+}
+
+.flex8 {
+    flex: 8;
+}
+
+.flex16 {
+    flex: 16;
+}
+
+.flexCol {
+    flex-direction: column;
+}
+
+.flexRow {
+    flex-direction: row;
+}
+
+.flexCen {
+    justify-content: center;
+}
+
+.imgContainer {
+    float: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img {
+    max-width: 50%;
+}
+
+img:hover {
+    min-width: 75%;
+}
+
+
+@media(max-width: 600px) {
+    #leftmenu {
+        display: none;
+    }
+
+    #content {
+        flex-direction: column;
+    }
+}
+
+

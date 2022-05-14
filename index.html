@@ -1,51 +1,110 @@
-<!DOCTYPE html><html lang="en-us"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><title>maymoo</title><meta name="description"><meta name="generator" content="maymoo"><meta name="author" content="maymoozy"><meta name="keywords" content="sjaak van den berg, svdb, bitcoin, crypto, payment, integration, bitcoins, wordpress, betaling, webshop, front end, design, ontwerp, developer"><meta name="HandheldFriendly" content="True"><meta name="MobileOptimized" content="320"><meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1,user-scalable=0"><link rel="stylesheet" type="text/css" href="/styles/screen.css"><link rel="apple-touch-icon" sizes="57x57" href="/images/apple-touch-icon-57x57.png"><link rel="apple-touch-icon" sizes="60x60" href="/images/apple-touch-icon-60x60.png"><link rel="apple-touch-icon" sizes="72x72" href="/images/apple-touch-icon-72x72.png"><link rel="apple-touch-icon" sizes="76x76" href="/images/apple-touch-icon-76x76.png"><link rel="apple-touch-icon" sizes="114x114" href="/images/apple-touch-icon-114x114.png"><link rel="apple-touch-icon" sizes="120x120" href="/images/apple-touch-icon-120x120.png"><link rel="apple-touch-icon" sizes="144x144" href="/images/apple-touch-icon-144x144.png"><link rel="apple-touch-icon" sizes="152x152" href="/images/apple-touch-icon-152x152.png"><link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-180x180.png"><link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png"><link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png"><link rel="icon" type="image/png" sizes="96x96" href="/images/favicon-96x96.png"><link rel="icon" type="image/png" sizes="160x160" href="/images/favicon-160x160.png"><link rel="icon" type="image/png" sizes="192x192" href="/images/favicon-192x192.png"><meta name="msapplication-TileColor" content="#121315"><meta name="msapplication-TileImage" content="/images/mstile-144x144.png"></head><body itemscope itemtype="https://schema.org/WebPage"><header itemscope itemtype="https://schema.org/WPHeader"><a href="/"><img src="/images/svdb.png" alt="maymoo" title="maymoo"></a><h1><a href="/" alt="maymoo" title="maymoo" itemprop="headline">maymoo</a></h1><p itemprop="description"></p><nav itemscope itemtype="https://schema.org/SiteNavigationElement"><ul><li itemprop="name"><a href="/" alt="Home" title="Home" itemprop="url">Home</a></li><li itemprop="name"><a href="/articles" alt="Articles" title="Articles" itemprop="url">Articles</a></li><li itemprop="name"><a href="/about" alt="About" title="About" itemprop="url">About</a></li></ul></nav><div class="space"></div></header><main itemscope itemtype="https://schema.org/Blog"><h4 class="page-title">Recent Articles</h4><a href="/2020/09/23/Markdown语法大全/" class="article"><article itemscope itemprop="blogPost" itemtype="https://schema.org/BlogPosting" class="item"><h2 itemprop="headline">Markdown语法大全</h2><span class="post-meta">Published on<time itemprop="datePublished" datetime="2020-09-23T03:35:11.733Z"> 星期三, 九月 23日 2020 at 11:35</time>, 4 min read</span><p itemprop="text" class="post-excerpt">[TOC]
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>My blog</title>
+        <!-- index.css -->
+        <style>@import url(css/index.css);</style>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+            }
 
-本文使用的Markdown编辑器是Visual Studio Code，截止文章完成，VSCode版本为Version 1.49.1。已安装的插件包括：
+            #container {
+                position: relative;
+                overflow:auto;
+                overflow-wrap: normal;
+            }
 
-Markdown All in One(v3.3.0)
-Markdown Preview Enhanced(v0.5.13)
-markdownlint(v0.36.3)
-Trailing Spaces(v0.3.1)
-Bracket Pair Colorizer(v1.</p></article></a><a href="/2020/08/18/小愿望记录册/" class="article"><article itemscope itemprop="blogPost" itemtype="https://schema.org/BlogPosting" class="item"><h2 itemprop="headline">小愿望记录册</h2><span class="post-meta">Published on<time itemprop="datePublished" datetime="2020-08-18T00:30:00.000Z"> 星期二, 八月 18日 2020 at 8:30</time>, 1 min read</span><p itemprop="text" class="post-excerpt">阿巴阿巴这篇文章会更新我们一起的小愿望，把所有想做的事情、要做的事情都记录下来。
-盲盒破产计划
- 泡泡玛特
+            .box {
+                float: left;
+                /* 给每个存放照片box设置为浮动元素，让所有的图片浮动到网页的第一行*/
+                padding: 5px;
+            }
 
-约读计划
- 《假如你跳进一个黑洞里》————科迪·卡西迪
+            .box-img {
+                width: 300px;
+                padding: 5px;
+                border: 1px solid #ccc;
+                box-shadow: 0 0 5px #ccc;
+                border-radius: 5px;
+            }
 
-吃吃吃
- 自制五谷杂粮糊糊
- 给泡泡妮儿来一碗热腾腾的西红柿炝锅面
-（2020年8月20日达成）
-
-小幸福
- 2020年8月25日20:45欠我一个小愿望哦
- 一起去很多地方的书店
- 生日的时候去拍艺术照
- 把花养好（可以得到一个小愿望哦）
-
-</p></article></a><a href="/2020/08/18/介绍一下/" class="article"><article itemscope itemprop="blogPost" itemtype="https://schema.org/BlogPosting" class="item"><h2 itemprop="headline">maymoozy的博客</h2><span class="post-meta">Published on<time itemprop="datePublished" datetime="2020-08-18T00:30:00.000Z"> 星期二, 八月 18日 2020 at 8:30</time>, 1 min read</span><p itemprop="text" class="post-excerpt">2020年8月17日博客正式启动啦，这个博客将会是两个人共同经营的，我会在上面撰写自己看书时的书摘、读书笔记和感悟，以及记录自己的生活、学习。总而言之，这应该会是一个琐碎而又充满温暖的博客！
-</p></article></a><a href="/2020/08/15/读书笔记-《曾国藩传》-3/" class="article"><article itemscope itemprop="blogPost" itemtype="https://schema.org/BlogPosting" class="item"><h2 itemprop="headline">读书笔记-《曾国藩传》-2</h2><span class="post-meta">Published on<time itemprop="datePublished" datetime="2020-08-15T12:00:00.000Z"> 星期六, 八月 15日 2020 at 20:00</time>, 1 min read</span><p itemprop="text" class="post-excerpt">
-无事不可变
-
-
-遏欲之难，类如此矣。不挟破釜沉舟之势，讵有济哉。
+            .box-img img {
+                width: 100%;
+                height: auto;
+            }
+        </style>
+        <!-- index.js -->
+        <script src="script/index.js"></script>
+    </head>
 
 
-性格深处的缺陷，并不像戒除一项单纯的嗜好那么简单。
 
-&amp;emsp;&amp;emsp;曾国藩早年嗜烟，烟瘾非常大，但当他下决心要戒烟之后，折了自己的烟杆，发誓再不碰烟。
+    <body>
+        <div id="container">
+            <div class="box">
+                <div class="box-img">
+                    <img src="./resource/image/IMG_0275.JPG" alt="">
+                    <span>./resource/image/IMG_0275.JPG</span>
+                </div>
+            </div>
+            <div class="box">
+                <div class="box-img">
+                    <img src="./resource/image/IMG_0275.JPG" alt="">
+                </div>
+            </div>
+            <div class="box">
+                <div class="box-img">
+                    <img src="./resource/image/IMG_0278.JPG" alt="">
+                </div>
+            </div>
+            <div class="box">
+                <div class="box-img">
+                    <img src="./resource/image/小物件书床头蓝.jpg" alt="">
+                </div>
+            </div>
+            <div class="box">
+                <div class="box-img">
+                    <img src="./resource/image/IMG_0275.JPG" alt="">
+                </div>
+            </div>
+            <div class="box">
+                <div class="box-img">
+                    <img src="./resource/image/小米和华为背面.jpg" alt="">
+                </div>
+            </div>
+            <div class="box">
+                <div class="box-img">
+                    <img src="./resource/image/IMG_0277.JPG" alt="">
+                </div>
+            </div>
+            <div class="box">
+                <div class="box-img">
+                    <img src="./resource/image/索尼耳机里面.jpg" alt="">
+                </div>
+            </div>
+            <div class="box">
+                <div class="box-img">
+                    <img src="./resource/image/IMG_0275.JPG" alt="">
+                </div>
+            </div>
+            <div class="box">
+                <div class="box-img">
+                    <img src="./resource/image/IMG_0275.JPG" alt="">
+                </div>
+            </div>
+            <div class="box">
+                <div class="box-img">
+                    <img src="./resource/image/IMG_0275.JPG" alt="">
+                </div>
+            </div>
 
-凡人做一事，便须全副精神注在此一事，首尾不懈，不可见异思迁，做这样想那样，坐这山望那山，人而无恒，终身一无所成。
 
-
-勿忘勿助，看平地长得万丈高。&amp;emsp;&amp;emsp;曾国藩也有过急于求成的时候，他告诫</p></article></a><a href="/2020/08/15/读书笔记-《曾国藩传》-2/" class="article"><article itemscope itemprop="blogPost" itemtype="https://schema.org/BlogPosting" class="item"><h2 itemprop="headline">读书笔记-《曾国藩传》-2</h2><span class="post-meta">Published on<time itemprop="datePublished" datetime="2020-08-15T12:00:00.000Z"> 星期六, 八月 15日 2020 at 20:00</time>, 1 min read</span><p itemprop="text" class="post-excerpt">
-曾国藩说：“天下之至拙,能胜天下之至巧。”
-
-
-作为一个笨人，曾国藩发现下笨功夫有下笨功夫的好处。第一，笨拙的人没有智力资本，因此比别人更虚心，更肯付出。第二，笨拙的人从小接受挫折教育多，总是失败，因此“逆商”也就是逆境商数比较高，抗打击能力特别强。第三，笨拙的人不懂取巧，不走捷径，遇到问题只知硬钻过去，因此做事不留死角。
-
-&amp;emsp;&amp;emsp;论智力，曾国藩认为自己属于笨拙之人，但也是他的经历让他认为：至拙能胜至巧。其观点在于笨</p></article></a><a href="/2020/08/14/读书笔记-《曾国藩传》-1/" class="article"><article itemscope itemprop="blogPost" itemtype="https://schema.org/BlogPosting" class="item"><h2 itemprop="headline">读书笔记-《曾国藩传》-1</h2><span class="post-meta">Published on<time itemprop="datePublished" datetime="2020-08-14T12:00:00.000Z"> 星期五, 八月 14日 2020 at 20:00</time>, 1 min read</span><p itemprop="text" class="post-excerpt">
-曾玉屏：凡菜茹手植手撷者，其味弥甘；凡物亲历艰苦而得者，食之弥安也。
-
-&amp;emsp;&amp;emsp;曾国藩的祖父是农民出身，曾经是个不务正业的人，没有什么家底却买了一匹好马，穿着光鲜，整天和城里一些纨绔子弟混在一起，他本以为在别人眼中自己很“有头有脸”，没想到大家对他的评价却是“爱装败家子”，他备受打击，从此洗心革面发誓要兴家立业，“自是终身未明而起”，努力耕作。后来他以此教育曾国藩，意为只有自己种的菜，吃着才可口，只有自己努力赚来的钱，</p></article></a><footer itemscope itemtype="https://schema.org/WPFooter"><section class="pubkey">13DB CAA1 2633 81A7</section><section class="copyright"><a target="_blank" rel="noopener" href="http://opensource.org/licenses/MIT">MIT License</a>&middot; Published with<a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a></section></footer></main></body></html>
+        </div>
+        <script src="./script/index.js"></script>
+    </body>
+</html>
