@@ -32,10 +32,10 @@ function loadImg() {
         div.setAttribute('class', 'imgCon');
         div.setAttribute('onclick', 'checkImgOn(this)');
         div.style.float = 'left';
-        div.style.padding = '10px';
+        div.style.padding = '15px';
         div.style.width = '300px';
-        div.style.border = '1px solid #000';
-        div.style.boxShadow = '0 0 5px #ccc';
+        div.style.border = '0';
+        div.style.boxShadow = '0 1px 5px #ccc';
         div.style.borderRadius = '5px';
         div.style.zIndex = 1;
         div.style.display = 'flex';
