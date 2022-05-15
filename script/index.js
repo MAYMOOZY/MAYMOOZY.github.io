@@ -22,16 +22,18 @@ function loadImg() {
         // </div>
         let div = document.createElement('div');
         let img = document.createElement('img');
+        let priceDesc = document.createElement('span');
         let desc = document.createElement('span');
         div.appendChild(img);
+        div.appendChild(priceDesc);
         div.appendChild(desc);
         document.getElementById('contentArea').appendChild(div);
 
         div.setAttribute('class', 'imgCon');
         div.setAttribute('onclick', 'checkImgOn(this)');
         div.style.float = 'left';
-        div.style.padding = '5px';
-        div.style.width = '200px';
+        div.style.padding = '10px';
+        div.style.width = '300px';
         div.style.border = '1px solid #000';
         div.style.boxShadow = '0 0 5px #ccc';
         div.style.borderRadius = '5px';
@@ -41,15 +43,19 @@ function loadImg() {
         div.style.alignItems = 'center';
         div.style.justifyContent = 'center';
 
-        img.setAttribute('src', imgs[i].url);
+        img.setAttribute('src', basePath + imgs[i].url);
         img.style.width = '100%';
         img.style.zIndex = 1;
         let name = imgs[i].url.split('/');
         name = name[name.length - 1].split('.')[0];
         img.setAttribute('alt', name);
 
-        // desc.innerText = imgs[i].desc;
-        desc.innerText = name;
+        let descStr = imgs[i].desc.split('）');
+        console.log(descStr);
+        priceDesc.innerText = descStr[0] + '）';
+        priceDesc.style.color = 'red';
+        desc.innerText = descStr[1];
+        // desc.innerText = name;
         if (i === imgs.length - 1) {
             img.onload = function () {
                 imgLocation('contentArea', 'imgCon');
@@ -63,7 +69,7 @@ function imgLocation(parent, content) {
     // 将containerd下所有的内容全部取出
     var eParent = document.getElementById(parent);
     var eContents = getImgCons(eParent, content);
-    
+
 
     var imgWidth = eContents[0].offsetWidth;
     var imgNumPerRow = Math.floor(eParent.offsetWidth / imgWidth);

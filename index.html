@@ -12,62 +12,25 @@
         <script src="script/index.js"></script>
     </head>
 
-
     <body>
-        <div id="container" >
+        <div id="container">
             <!-- navigator -->
             <div id="navi">
-                <div class="block">研三毕业，卖自用的各种物件儿</div>
-                <div class="block">联系方式: QQ 1586817306</div>
+                <div class="block" style="flex-direction: column; flex: 2">
+                    <p>研三即将毕业，出售一些自用的各种物件</p>
+                    <p>界面比较简单，图片加载可能比较慢，请耐心等待</p>
+                    <p>图片点击可以放大查看，再次点击恢复原大小</p>
+                    <p>价格不满意可以商量，喜欢请扫描右侧二维码添加我的QQ</p>
+                </div>
+                <div class="block" onclick="checkImgOn(this)"
+                    style="flex-direction: column; flex: 1">
+                    <img src="./resource/image/QRcode.jpg">
+                    <p>（点击二维码可放大）</p>
+                </div>
             </div>
 
-            <div id="contentArea" >
+            <div id="contentArea">
 
-                <!-- <div class="imgCon" onclick="checkImgOn(this)">
-                    <img src="./resource/image/IMG_0275.JPG" alt="">
-                    <span>./resource/image/IMG_0275.JPG</span>
-                    <span>50元</span>
-                </div>
-
-                <div class="imgCon">
-                    <img src="./resource/image/IMG_0275.JPG" alt="">
-                </div>
-
-                <div class="imgCon">
-                    <img src="./resource/image/IMG_0278.JPG" alt="">
-                </div>
-
-                <div class="imgCon">
-                    <img src="./resource/image/小物件书床头蓝.jpg" alt="">
-                </div>
-
-                <div class="imgCon">
-                    <img src="./resource/image/IMG_0275.JPG" alt="">
-                </div>
-
-                <div class="imgCon">
-                    <img src="./resource/image/小米和华为背面.jpg" alt="">
-                </div>
-
-                <div class="imgCon">
-                    <img src="./resource/image/IMG_0277.JPG" alt="">
-                </div>
-
-                <div class="imgCon">
-                    <img src="./resource/image/索尼耳机里面.jpg" alt="">
-                </div>
-
-                <div class="imgCon">
-                    <img src="./resource/image/IMG_0275.JPG" alt="">
-                </div>
-
-                <div class="imgCon">
-                    <img src="./resource/image/IMG_0275.JPG" alt="">
-                </div>
-
-                <div class="imgCon">
-                    <img src="./resource/image/IMG_0275.JPG" alt="">
-                </div> -->
             </div>
         </div>
     </body>

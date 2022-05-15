@@ -22,29 +22,31 @@
     padding: 0;
     border: 1px solid black;
     flex: 1;
-    height: auto;
 
     color: red;
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-direction: row;
+    justify-items: center;
     justify-content: center;
 }
 
 
 #navi div {
+    margin: 5px;
     flex: 1;
-    height: 100%;
     background-color: white;
-    margin: 4px;
     box-shadow:
         rgb(0 0 0 / 20%) 0px 2px 1px -1px,
         rgb(0 0 0 / 14%) 0px 1px 1px 0px,
         rgb(0 0 0 / 12%) 0px 1px 3px 0px;
-
     text-align: center;
-    vertical-align: middle;
-    line-height: 100%;
+    line-height:100%;
+    vertical-align: top;
+    justify-content: center;
+}
+
+#navi div img{
+    height: 80px;
 }
 
 

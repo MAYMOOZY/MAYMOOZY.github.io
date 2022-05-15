@@ -1,86 +1,68 @@
-const imgs =[
+const basePath = "./resource/image/";
+const imgs = [
     {
-        url: "./resource/image/IMG_0275.JPG",
-        desc: ""
+        url: "ballons.png",
+        desc: "（一包5元）几十个大号气球，里面有纸片的那种"
     },
     {
-        url: "./resource/image/IMG_0277.JPG",
-        desc: ""
+        url: "blackberry.png",
+        desc: "（100元）考研备用机，经典黑莓手机，可发短信打电话"
     },
     {
-        url: "./resource/image/IMG_0278.JPG",
-        desc: ""
+        url: "chargers.png",
+        desc: "（两个20元）充电宝，左边2万mh，右边5千mh"
     },
     {
-        url: "./resource/image/小物件书床头蓝.JPG",
-        desc: ""
+        url: "dictionaries.png",
+        desc: "（一套80元）只翻过两次的，正版陆谷孙汉英大词典+新世纪英汉词典套装，在我这儿尘封已久但灰尘已经被我擦得干干净净的，翻译大杀器! 没能让它物尽其用，我已铸成大错! 不能为它谋得良主，我将错上加错! "
     },
     {
-        url: "./resource/image/小米和华为背面.JPG",
-        desc: ""
+        url: "english_books.png",
+        desc: "（每本5元）英语书、西班牙语书、日语书"
     },
     {
-        url: "./resource/image/索尼耳机里面.JPG",
-        desc: ""
+        url: "hot_skin.png",
+        desc: "（一包5元）一包10个暖贴，发热很足"
     },
     {
-        url: "./resource/image/IMG_0279.JPG",
-        desc: ""
+        url: "ipad_bag_1.png",
+        desc: "（5元）ipad pro 10.5保护套"
     },
     {
-        url: "./resource/image/IMG_0280.JPG",
-        desc: ""
+        url: "ipad_bag.png",
+        desc: "（40元）ipad pro 10.5纯皮保护包"
     },
     {
-        url: "./resource/image/IMG_0281.JPG",
-        desc: ""
+        url: "miAudio.png",
+        desc: "（20元）小米蓝牙音箱"
     },
     {
-        url: "./resource/image/IMG_0282.JPG",
-        desc: ""
+        url: "mouse_bottom.png",
+        desc: "（大5元小3元）鼠标垫"
     },
     {
-        url: "./resource/image/IMG_0284.JPG",
-        desc: ""
+        url: "pens.png",
+        desc: "（笔0.5元每支，笔架2.5元每个）各种笔和笔架"
     },
     {
-        url: "./resource/image/IMG_0285.JPG",
-        desc: ""
+        url: "phone_1.png",
+        desc: "（小米10s：1899，华为p30：859）小米10s 12g+256g白色版，自用一手，无拆无修无磕碰，21年4月入手，品相极佳，具体参数请自行查阅。当主力机使用一点儿问题没有，lolm，原神什么都轻松驾驭。从使用感觉上来说，90hz的屏幕平时使用和玩游戏都极大提高了视觉流畅度，1亿像素拍全分辨率的照片细节清晰到令人发指。哈曼卡顿调教的上下双扬声器，我只能说，什么是音质，什么空间感，体会过才知道。"
     },
     {
-        url: "./resource/image/IMG_0286.JPG",
-        desc: ""
+        url:"router.png",
+        desc:"（10元）极路由，可插充电宝，宿舍多人可共享wifi"
     },
     {
-        url: "./resource/image/IMG_0287.JPG",
-        desc: ""
+        url:"tools.png",
+        desc:"（打包2元）小夹子"
     },
     {
-        url: "./resource/image/IMG_0288.JPG",
-        desc: ""
+        url:"wh_1000xm3.png",
+        desc:"（859元）sony wh-1000xm3 自用一手，无拆无修无磕碰，正常使用的磨损。xm3的传奇可以去各大视频网站自行搜索，不论从音质，主动降噪效果，还是从佩戴舒适度，颜值等方面，都无人能出其右，妥妥的头戴式主动降噪耳机天花板。在教室学习总被来来往往的人打断思绪?在图书馆旁边的人翻书的声音让你心神不宁?高强度学习的时候静不下心?你在学习，室友却不是在打游戏就是在打呼噜? 你需要一个强力的主动降噪耳机! xm3，绝对值得拥有。"
     },
     {
-        url: "./resource/image/IMG_0289.JPG",
-        desc: ""
+        url:"xs_bags.png",
+        desc:"（每个3元）iphone xs的手机壳，手感很好，就是用的时间比较长，外观有些磨损了。"
     },
-    {
-        url: "./resource/image/IMG_0290.JPG",
-        desc: ""
-    },
-    {
-        url: "./resource/image/IMG_0291.JPG",
-        desc: ""
-    },
-    {
-        url: "./resource/image/IMG_0292.JPG",
-        desc: ""
-    },
-    {
-        url: "./resource/image/IMG_0293.JPG",
-        desc: ""
-    },
-    {
-        url: "./resource/image/IMG_0294.JPG",
-        desc: ""
-    },
+
 ]
