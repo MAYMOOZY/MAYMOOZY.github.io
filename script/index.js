@@ -51,15 +51,12 @@ function loadImg() {
         img.setAttribute('alt', name);
 
         let descStr = imgs[i].desc.split('）');
-        console.log(descStr);
         priceDesc.innerText = descStr[0] + '）';
         priceDesc.style.color = 'red';
         desc.innerText = descStr[1];
         // desc.innerText = name;
-        if (i === imgs.length - 1) {
-            img.onload = function () {
-                imgLocation('contentArea', 'imgCon');
-            }
+        img.onload = function () {
+            imgLocation('contentArea', 'imgCon');
         }
     }
 }
@@ -70,12 +67,9 @@ function imgLocation(parent, content) {
     var eParent = document.getElementById(parent);
     var eContents = getImgCons(eParent, content);
 
-
     var imgWidth = eContents[0].offsetWidth;
     var imgNumPerRow = Math.floor(eParent.offsetWidth / imgWidth);
-    console.log(imgNumPerRow);
     eParent.style.width = imgWidth * imgNumPerRow;
-
 
     let heightPerCol = [];
 
