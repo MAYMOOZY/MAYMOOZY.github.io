@@ -46,13 +46,14 @@ function loadImg() {
         img.setAttribute('src', basePath + imgs[i].url);
         img.style.width = '100%';
         img.style.zIndex = 1;
+
         let name = imgs[i].url.split('/');
         name = name[name.length - 1].split('.')[0];
         img.setAttribute('alt', name);
 
         let descStr = imgs[i].desc.split('）');
-        priceDesc.innerText = descStr[0] + '）';
         priceDesc.style.color = 'red';
+        priceDesc.innerText = descStr[0] + '）';
         desc.innerText = descStr[1];
         // desc.innerText = name;
         img.onload = function () {
