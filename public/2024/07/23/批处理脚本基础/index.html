@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 7.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/zhangx-x/zhangx-x.github.io/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/zhangx-x/zhangx-x.github.io/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/zhangx-x/zhangx-x.github.io/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/zhangx-x/zhangx-x.github.io/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/zhangx-x/zhangx-x.github.io/css/main.css">
+
+
+<link rel="stylesheet" href="/zhangx-x/zhangx-x.github.io/lib/font-awesome/css/font-awesome.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"github.com","root":"/zhangx-x/zhangx-x.github.io/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="资料 kaizen的博客  0 杂记 .bat文件是一种批处理文件，其实际上是按照顺序运行于cmd的一系列代码集合，每一行代码都是一条DOS命令，可以用任何文本编辑工具创建和修改。 批处理是一种十分简单的程序，流程控制方面可以用if、goto、for进行，语言能力远不及高级编程语言，也并不规范。 运行一个.bat文件其实就是向cmd中按序输入了文件中的每一行代码。 把.bat文件所在路径添加入DO">
+<meta property="og:type" content="article">
+<meta property="og:title" content="批处理脚本基础">
+<meta property="og:url" content="https://github.com/zhangx-x/zhangx-x.github.io/2024/07/23/%E6%89%B9%E5%A4%84%E7%90%86%E8%84%9A%E6%9C%AC%E5%9F%BA%E7%A1%80/index.html">
+<meta property="og:site_name" content="MAYMOOZY&#39;S BLOG">
+<meta property="og:description" content="资料 kaizen的博客  0 杂记 .bat文件是一种批处理文件，其实际上是按照顺序运行于cmd的一系列代码集合，每一行代码都是一条DOS命令，可以用任何文本编辑工具创建和修改。 批处理是一种十分简单的程序，流程控制方面可以用if、goto、for进行，语言能力远不及高级编程语言，也并不规范。 运行一个.bat文件其实就是向cmd中按序输入了文件中的每一行代码。 把.bat文件所在路径添加入DO">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-07-23T01:19:43.000Z">
+<meta property="article:modified_time" content="2024-07-23T01:21:56.324Z">
+<meta property="article:author" content="MAYMOOZY">
+<meta property="article:tag" content="terminal, bat, shell, cmd">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://github.com/zhangx-x/zhangx-x.github.io/2024/07/23/%E6%89%B9%E5%A4%84%E7%90%86%E8%84%9A%E6%9C%AC%E5%9F%BA%E7%A1%80/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>批处理脚本基础 | MAYMOOZY'S BLOG</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/zhangx-x/zhangx-x.github.io/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">MAYMOOZY'S BLOG</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">向阳而生</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/zhangx-x/zhangx-x.github.io/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/zhangx-x/zhangx-x.github.io/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://github.com/zhangx-x/zhangx-x.github.io/2024/07/23/%E6%89%B9%E5%A4%84%E7%90%86%E8%84%9A%E6%9C%AC%E5%9F%BA%E7%A1%80/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/zhangx-x/zhangx-x.github.io/images/avatar.gif">
+      <meta itemprop="name" content="MAYMOOZY">
+      <meta itemprop="description" content="MAYMOOZY的博客页面">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MAYMOOZY'S BLOG">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          批处理脚本基础
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2024-07-23 09:19:43 / 修改时间：09:21:56" itemprop="dateCreated datePublished" datetime="2024-07-23T09:19:43+08:00">2024-07-23</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="资料"><a href="#资料" class="headerlink" title="资料"></a>资料</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/Braveliu/category/769334.html">kaizen的博客</a></li>
+</ul>
+<h2 id="0-杂记"><a href="#0-杂记" class="headerlink" title="0 杂记"></a>0 杂记</h2><ul>
+<li>.bat文件是一种批处理文件，其实际上是按照顺序运行于cmd的一系列代码集合，每一行代码都是一条DOS命令，可以用任何文本编辑工具创建和修改。</li>
+<li>批处理是一种十分简单的程序，流程控制方面可以用if、goto、for进行，语言能力远不及高级编程语言，也并不规范。</li>
+<li>运行一个.bat文件其实就是向cmd中按序输入了文件中的每一行代码。</li>
+<li>把.bat文件所在路径添加入DOS的搜索路径，就可以在任意位置运行它。</li>
+<li>系统启动的时候会自动运行某些.bat，如 C:\AUTOEXEC.bat，利用这个机制，可以将一些想要随系统启动自动运行的命令写入该文件。</li>
+<li>.bat的语法对大小写不敏感。</li>
+<li>.cmd也是一种批处理文件。</li>
+</ul>
+<h2 id="1-基本语法"><a href="#1-基本语法" class="headerlink" title="1 基本语法"></a>1 基本语法</h2><h3 id="1-1-rem：行注释"><a href="#1-1-rem：行注释" class="headerlink" title="1.1 rem：行注释"></a>1.1 rem：行注释</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">rem [message]</span><br><span class="line"></span><br><span class="line">rem This code will not be executed!</span><br></pre></td></tr></table></figure>
+
+<h3 id="1-2-echo：打印"><a href="#1-2-echo：打印" class="headerlink" title="1.2 echo：打印"></a>1.2 echo：打印</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">rem 查看当前echo的on/off状态</span><br><span class="line">echo</span><br><span class="line"></span><br><span class="line">rem [on/off]参数默认为on，表示打印的同时显示该命令</span><br><span class="line">echo [on/off]</span><br><span class="line"></span><br><span class="line">rem 打印一条信息</span><br><span class="line">echo [message]</span><br><span class="line"></span><br><span class="line">rem 新建一个文件，将一条信息写入该文件</span><br><span class="line">echo [message] &gt; [path\filename]</span><br><span class="line"></span><br><span class="line">rem 将一条信息追加写入某文件</span><br><span class="line">echo [message] &gt;&gt; [path\filename]</span><br></pre></td></tr></table></figure>
+
+<p>echo命令后面直接跟[message]的时候，echo是一条打印命令，不论echo状态是on还是off，信息都会被打印出来，区别只是执行的命令不会显示。</p>
+<p>单echo命令和管道操作符&gt;以及&gt;&gt;结合的时候，就不再是一条打印命令，而是写入命令，当echo处于off状态时，只会执行写入，不会显示写入的信息。</p>
+<h3 id="1-3-：行命令隐藏"><a href="#1-3-：行命令隐藏" class="headerlink" title="1.3 @：行命令隐藏"></a>1.3 @：行命令隐藏</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">rem 隐藏一行命令（执行但不显示这条命令）</span><br><span class="line">@echo off</span><br></pre></td></tr></table></figure>
+
+<p>@与echo off功能类似，但off会彻底关闭命令回显直到再次打开，而@只会隐藏一行的命令。</p>
+<h3 id="1-4-pause：cmd暂停"><a href="#1-4-pause：cmd暂停" class="headerlink" title="1.4 pause：cmd暂停"></a>1.4 pause：cmd暂停</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">rem 暂停cmd知道用户有输入（即请按下任意键继续...）</span><br><span class="line">pause</span><br></pre></td></tr></table></figure>
+
+<h3 id="1-5-help：帮助（同-）"><a href="#1-5-help：帮助（同-）" class="headerlink" title="1.5 help：帮助（同&#x2F;?）"></a>1.5 help：帮助（同&#x2F;?）</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">rem 显示一条命令的帮助信息</span><br><span class="line">help echo</span><br><span class="line"></span><br><span class="line">rem 或者使用 /?</span><br><span class="line">echo /?</span><br></pre></td></tr></table></figure>
+
+<p>帮助信息同样可以和管道操作符结合起来，将帮助信息写入文件。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">rem 把帮助信息写入文件</span><br><span class="line">echo /? &gt;&gt; [filename]</span><br></pre></td></tr></table></figure>
+
+<h3 id="1-6-call：调用其他批处理文件"><a href="#1-6-call：调用其他批处理文件" class="headerlink" title="1.6 call：调用其他批处理文件"></a>1.6 call：调用其他批处理文件</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">rem 调用其他批处理文件</span><br><span class="line">call filepath [batch parameters] [:label]</span><br></pre></td></tr></table></figure>
+
+<p>call是调用其他批处理文件（且必须是批处理文件），并且不终止当前批处理，也就是说，调用结束之后，会返回当前批处理文件，继续执行后面的命令。</p>
+<p>调用可以传递参数，参数之间用空格分隔。</p>
+<p>也可以call自己，形成递归，但可能会死循环。</p>
+<h3 id="1-7-start：调用其他程序"><a href="#1-7-start：调用其他程序" class="headerlink" title="1.7 start：调用其他程序"></a>1.7 start：调用其他程序</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">rem 调用其他程序</span><br><span class="line">start [/options] filepath [paramters]</span><br></pre></td></tr></table></figure>
+
+<p>start可以调用其他任何DOS命令和cmd程序。</p>
+<p>start可以有一些配置选项，用于调用程序时的设置。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">rem 一些start的配置选项</span><br><span class="line"></span><br><span class="line">rem 最小化窗口调用</span><br><span class="line">/MIN </span><br><span class="line"></span><br><span class="line">rem 以high优先级调用</span><br><span class="line">/HIGH</span><br><span class="line"></span><br><span class="line">rem 以realtime优先级调用</span><br><span class="line">/REALTIME</span><br><span class="line"></span><br><span class="line">rem 调用并等它结束</span><br><span class="line">/WAIT</span><br></pre></td></tr></table></figure>
+
+<p>需要注意的是：如果文件路径名有空格，则需要以双引号括起空格两边的单词。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">rem 处理含空格的路径</span><br><span class="line">start E:\&quot;program files&quot;\path\filename.exe</span><br></pre></td></tr></table></figure>
+
+<h3 id="1-8-流程控制"><a href="#1-8-流程控制" class="headerlink" title="1.8 流程控制"></a>1.8 流程控制</h3><ul>
+<li>if：判断条件是否成立</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">rem 判断条件是否成立</span><br><span class="line">if [not] &quot;参数&quot; == &quot;条件&quot; command</span><br><span class="line"></span><br><span class="line">rem 如</span><br><span class="line">if &quot;%1&quot; == &quot;a&quot; echo a</span><br><span class="line">if &#123;%1&#125; == &#123;&#125; goto noparamters</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>if exist：判断是否存在文件</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">rem 判断是否存在某文件</span><br><span class="line">if [not] exist filename command</span><br><span class="line"></span><br><span class="line">rem 如</span><br><span class="line">if exist ./test.txt type ./test.txt</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>if errorlevel number：判断返回值是否为number</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">rem 判断是否程序的返回值为某数字</span><br><span class="line">if [not] errorlevel number</span><br><span class="line"></span><br><span class="line">rem 如拷贝某文件至另一目录，判断是否成功</span><br><span class="line">xcopy filename path</span><br><span class="line">if not errorlevel 0 echo copy failed! else echo copy success!</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>if else：多分支判断</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">rem 多条件判断，可以用括号括起来每个条件后的执行语句，增加可读性</span><br><span class="line">if [not] condition (command 1) else if [not] condition (command 2) else (command 3)</span><br><span class="line"></span><br><span class="line">rem 同一个if-else分支里需要换行的时候，要在行尾用^，否则会报错</span><br><span class="line">if [not] condition (command 1) ^</span><br><span class="line"> else if [not] condition (command 2) ^</span><br><span class="line"> else (command 3)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>判断运算符</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">rem 等于</span><br><span class="line">equ</span><br><span class="line">==</span><br><span class="line"></span><br><span class="line">rem 不等于</span><br><span class="line">neq</span><br><span class="line">not</span><br><span class="line"></span><br><span class="line">rem 小于</span><br><span class="line">lss</span><br><span class="line"></span><br><span class="line">rem 小于等于</span><br><span class="line">leq</span><br><span class="line"></span><br><span class="line">rem 大于</span><br><span class="line">gtr</span><br><span class="line"></span><br><span class="line">rem 大于等于</span><br><span class="line">geq</span><br></pre></td></tr></table></figure>
+
+<h3 id="1-9-choice：以字符形式接收用户选择"><a href="#1-9-choice：以字符形式接收用户选择" class="headerlink" title="1.9 choice：以字符形式接收用户选择"></a>1.9 choice：以字符形式接收用户选择</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">rem 让用户输入一个字符来选择不同的选项，输入的字符会成为errorlevel数字，可以用条件判断</span><br><span class="line">choice /c &lt;option char&gt; \m &quot;text&quot;</span><br><span class="line"></span><br><span class="line">rem /c:&lt;option char&gt;会显示用户应当输入的字符选项，而&lt;option names&gt;则表示每个选项的名称</span><br><span class="line">rem 如</span><br><span class="line">choice /c ABC /m &quot;choiceA,choiceB,choiceC&quot;</span><br><span class="line">rem 此时会显示 </span><br><span class="line">rem choiceA, choiceB, choiceC[A,B,C]?</span><br></pre></td></tr></table></figure>
+
+<p>choice是DOS和windows提供的外部命令，具体语法可能有细微差别，需要在cmd中查看。</p>
+<p>含有choice的批处理程序，名称不能是choice，否则会陷入死循环。</p>
+<h3 id="1-10-for：循环控制语句"><a href="#1-10-for：循环控制语句" class="headerlink" title="1.10 for：循环控制语句"></a>1.10 for：循环控制语句</h3><p>for比较复杂，一般的编程语言中for为先判断循环，包含变量定义、条件判断和后处理三个部分。</p>
+<p>批处理中的for语法为：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">rem cmd窗口中直接使用</span><br><span class="line">for %variable in (&lt;set&gt;) do &lt;command&gt; [command paramters]</span><br><span class="line"></span><br><span class="line">rem 批处理脚本中使用</span><br><span class="line">for %%variable in (&lt;set&gt;) do &lt;command&gt; [command paramters]</span><br></pre></td></tr></table></figure>
+
+<p>%variable表示一个定义一个循环控制变量，set表示循环控制变量的取值范围。</p>
+<p>上述代码的区别是cmd中变量必须用单%引，而批处理脚本中则必须用双%引。</p>
+<p>需要特别注意的是，</p>
+<ul>
+<li>批处理脚本的for循环控制变量只能是26个字母中的一个，不能是一个单词。</li>
+<li>和脚本代码不同，变量名称是区分大小写的</li>
+</ul>
+<h2 id="2-常用指令"><a href="#2-常用指令" class="headerlink" title="2 常用指令"></a>2 常用指令</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">rem 结束进程</span><br><span class="line">tskill [PROCESS_NAME | PROCESS_ID]</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/zhangx-x/zhangx-x.github.io/tags/terminal-bat-shell-cmd/" rel="tag"># terminal, bat, shell, cmd</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/zhangx-x/zhangx-x.github.io/2024/07/23/%E7%94%A8Oh-My-Posh%E7%BE%8E%E5%8C%96%E7%BB%88%E7%AB%AF/" rel="prev" title="用Oh-My-Posh美化终端">
+      <i class="fa fa-chevron-left"></i> 用Oh-My-Posh美化终端
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/zhangx-x/zhangx-x.github.io/2024/07/23/%E7%94%A8Chocolaty%E7%AE%A1%E7%90%86Windows%E5%8C%85/" rel="next" title="用Chocolaty管理Windows包">
+      用Chocolaty管理Windows包 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B5%84%E6%96%99"><span class="nav-number">1.</span> <span class="nav-text">资料</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#0-%E6%9D%82%E8%AE%B0"><span class="nav-number">2.</span> <span class="nav-text">0 杂记</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95"><span class="nav-number">3.</span> <span class="nav-text">1 基本语法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-rem%EF%BC%9A%E8%A1%8C%E6%B3%A8%E9%87%8A"><span class="nav-number">3.1.</span> <span class="nav-text">1.1 rem：行注释</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-echo%EF%BC%9A%E6%89%93%E5%8D%B0"><span class="nav-number">3.2.</span> <span class="nav-text">1.2 echo：打印</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-%EF%BC%9A%E8%A1%8C%E5%91%BD%E4%BB%A4%E9%9A%90%E8%97%8F"><span class="nav-number">3.3.</span> <span class="nav-text">1.3 @：行命令隐藏</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-4-pause%EF%BC%9Acmd%E6%9A%82%E5%81%9C"><span class="nav-number">3.4.</span> <span class="nav-text">1.4 pause：cmd暂停</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-5-help%EF%BC%9A%E5%B8%AE%E5%8A%A9%EF%BC%88%E5%90%8C-%EF%BC%89"><span class="nav-number">3.5.</span> <span class="nav-text">1.5 help：帮助（同&#x2F;?）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-6-call%EF%BC%9A%E8%B0%83%E7%94%A8%E5%85%B6%E4%BB%96%E6%89%B9%E5%A4%84%E7%90%86%E6%96%87%E4%BB%B6"><span class="nav-number">3.6.</span> <span class="nav-text">1.6 call：调用其他批处理文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-7-start%EF%BC%9A%E8%B0%83%E7%94%A8%E5%85%B6%E4%BB%96%E7%A8%8B%E5%BA%8F"><span class="nav-number">3.7.</span> <span class="nav-text">1.7 start：调用其他程序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-8-%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6"><span class="nav-number">3.8.</span> <span class="nav-text">1.8 流程控制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-9-choice%EF%BC%9A%E4%BB%A5%E5%AD%97%E7%AC%A6%E5%BD%A2%E5%BC%8F%E6%8E%A5%E6%94%B6%E7%94%A8%E6%88%B7%E9%80%89%E6%8B%A9"><span class="nav-number">3.9.</span> <span class="nav-text">1.9 choice：以字符形式接收用户选择</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-10-for%EF%BC%9A%E5%BE%AA%E7%8E%AF%E6%8E%A7%E5%88%B6%E8%AF%AD%E5%8F%A5"><span class="nav-number">3.10.</span> <span class="nav-text">1.10 for：循环控制语句</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4"><span class="nav-number">4.</span> <span class="nav-text">2 常用指令</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">MAYMOOZY</p>
+  <div class="site-description" itemprop="description">MAYMOOZY的博客页面</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/zhangx-x/zhangx-x.github.io/archives/">
+        
+          <span class="site-state-item-count">4</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2024</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">MAYMOOZY</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/zhangx-x/zhangx-x.github.io/lib/anime.min.js"></script>
+  <script src="/zhangx-x/zhangx-x.github.io/lib/velocity/velocity.min.js"></script>
+  <script src="/zhangx-x/zhangx-x.github.io/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/zhangx-x/zhangx-x.github.io/js/utils.js"></script>
+
+<script src="/zhangx-x/zhangx-x.github.io/js/motion.js"></script>
+
+
+<script src="/zhangx-x/zhangx-x.github.io/js/schemes/muse.js"></script>
+
+
+<script src="/zhangx-x/zhangx-x.github.io/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
